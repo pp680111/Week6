@@ -1,0 +1,12 @@
+spring:
+  datasource:
+    url: jdbc:h2:mem:zst
+    driver-class-name: org.h2.Driver
+    schema: classpath:sql/h2ddl.sql
+  h2:
+    console:
+      enabled: true
+      settings:
+#        trace: true
+        web-allow-others: true
+        path: /h2-console
