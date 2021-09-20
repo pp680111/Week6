@@ -24,10 +24,10 @@ CREATE TABLE `t_item_stock` (
 ) ENGING=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='商品库存'
 
 CREATE TABLE `t_order` (
-  `id` varchar(40) NOT NULL,
-  `user_id` varchar(40) NOT NULL COMMENT '订单所属用户id',
+  `id` bigint NOT NULL,
+  `user_id` bigint NOT NULL COMMENT '订单所属用户id',
   `shipping_address` varchar(255) not null comment '用户收货地址',
-  `status` int(11) NOT NULL COMMENT '订单状态',
+  `status` int NOT NULL COMMENT '订单状态',
   `price` varchar(50) NOT NULL COMMENT '总价',
   `create_time` bigint COMMENT '创建时间',
   `update_time` bigint COMMENT '修改时间',
@@ -36,9 +36,10 @@ CREATE TABLE `t_order` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='订单';
 
 CREATE TABLE `t_order_item` (
-  `id` varchar(40) NOT NULL,
-  `order_id` varchar(40) NOT NULL COMMENT '订单id',
-  `item_id` varchar(40) NOT NULL COMMENT '商品id',
+  `id` bigint NOT NULL,
+  `order_id` bigint NOT NULL COMMENT '订单id',
+  `item_id` bigint NOT NULL COMMENT '商品id',
+  `item_stock_id` bigint NOT NULL COMMENT '商品库存id',
   `price` varchar(20) NOT NULL COMMENT '价格',
   `num` int(11) NOT NULL COMMENT '数量',
   PRIMARY KEY (`id`),
