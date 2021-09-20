@@ -21,7 +21,7 @@ CREATE TABLE `t_item_stock` (
     `status` int NOT NULL COMMENT '状态',
     PRIMARY KEY (`id`),
     KEY `idx_item_id` (`item_id`)
-) ENGING=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='商品库存'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='商品库存';
 
 CREATE TABLE `t_order` (
   `id` bigint NOT NULL,
